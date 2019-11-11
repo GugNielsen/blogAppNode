@@ -1,0 +1,39 @@
+
+<h3>Add Postagem:</h3>
+<div class="card">
+  <div class="card-body">
+<form action="/admin/validate" method="POST">
+  <div class="form-group">
+    <label for="titulo">Titulo:</label>
+    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="titulo de Postagen ">
+  </div>
+  <div class="form-group">
+    <label for="slug">Slug:</label>
+    <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug de Postagen">
+  </div>
+   <div class="form-group">
+    <label for="descrption">Descrição:</label>
+    <input type="text" class="form-control" name="descrption" id="descrption" placeholder="descrição de Postagen">
+  </div>
+  <div class="form-group">
+    <label for="conteudo">Conteudo:</label>
+    <textarea cols="30" role="30" type="text" class="form-control" name="conteudo" id="conteudo" placeholder="Conteudo de Postagen"></textarea>
+  </div>
+  <label for="Categoria">Categoria:</label>
+  <select name="categoria" class="custom-select">
+  {{#each categorias}}
+  <option value="{{_id}}">{{nome}}</option>
+  {{else}}
+   <option value="0">Nenhuma Opção Registrada </option>
+  {{/each}}
+  </select>
+   <br>
+  <button class="btn btn-outline-success mt-2">Cadastrar</button>
+</form>
+<br>
+{{#each erro}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+</div>
+</div>

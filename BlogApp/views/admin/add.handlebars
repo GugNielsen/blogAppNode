@@ -1,0 +1,25 @@
+
+<h3>Add Categorias:</h3>
+<div class="card">
+  <div class="card-body">
+<form action="/admin/cat/nova" method="POST">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome de cadastro ">
+  </div>
+  <div class="form-group">
+    <label for="slug">Slug:</label>
+    <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug de cadastro">
+  </div>
+  <button class="btn btn-outline-success">Cadastrar</button>
+</form>
+<br>
+{{#each erro}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+</div>
+</div>
+
+
+

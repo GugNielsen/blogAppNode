@@ -1,0 +1,22 @@
+<h3>Edite Categorias:</h3>
+<div class="card">
+  <div class="card-body">
+<form action="/admin/cat/edite" method="POST">
+<input type="hidden" name="id" value="{{categoria.id}}">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome de cadastro " value="{{categoria.nome}}">
+  </div>
+  <div class="form-group">
+    <label for="slug">Slug:</label>
+    <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug de cadastro" value="{{categoria.slug}}">
+  </div>
+  <button class="btn btn-outline-success">Editar</button>
+</form>
+<br>
+{{#each erro}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+</div>
+</div>
